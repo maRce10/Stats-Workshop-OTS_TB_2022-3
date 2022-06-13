@@ -71,7 +71,7 @@ knitr::opts_chunk$set(
 klippy::klippy(position = c('top', 'right'))
 ```
 
-Here we will walk through the most common statistical tests and show how they can be represented in the linear regression format. This section is based on [this post](https://lindeloev.github.io/tests-as-linear/?utm_source=pocket_mylist#4_one_mean). Check it out for a more in-depth description of the non-parametric alternatives. 
+Here we will walk through the most common statistical tests and show how they can be represented in the linear regression format. This section is based on [this post](https://lindeloev.github.io/tests-as-linear/). Check it out for a more in-depth description of the non-parametric alternatives. 
 
 ---
 
@@ -295,16 +295,63 @@ df
 
 ---
 
-# Chi-square for contengency tables
+# Chi-square for contingency tables
 
+This test looks to find and association between two categorical variables based on the co-occurrence of the categories, measured as counts. This is what a contingency table is, counts for all combinations of categories between two variables. For instance deaths by age of passenger of the Titanic:
 
-Although the coding is a bit more elaborated it can be narrow down to log-linear two-way ANOVA model. Let's get started...
+```{r}
 
-For a two-way contingency table, the model of the count variable $y$ is a modeled using the marginal proportions of a contingency table. Why this makes sense, is too involved to go into here, but [see the relevant slides by Christoph Scheepers here](https://www.uni-tuebingen.de/fileadmin/Uni_Tuebingen/SFB/SFB_833/A_Bereich/A1/Christoph_Scheepers_-_Statistikworkshop.pdf) for an excellent exposition. The model is composed of a lot of counts and the regression coefficients $A_i$ and $B_i$:
+# Contingency table
+# modified from https://lindeloev.github.io/tests-as-linear/
+mood_data <- matrix(data = c(100, 70, 30, 32, 110, 120), nrow = 2, 
+                    dimnames = list(handedness = c('left_handed', 'right_handed'), mood = c('happy', 'meh', 'sad')) 
+)
 
+mood_data
+```
+&nbsp;
+
+Although the coding is a bit more elaborated it can be narrow down to log-linear two-way ANOVA model:
 
 $log(y_i) = log(N) + log(\alpha_i) + log(\beta_j) + log(\alpha_i\beta_j)$
 
+&nbsp;
+
+The regression coefficients are $A_i$ and $B_i$. $\alpha_i$ and $\beta_j$ are the proportions of counts for the two levels of the binary categorical variable (one for each of the levels in the second categorical variable). Fortunately, there is an implementation of this model from the R package 'MASS' that simplifies coding:
+
+```{r}
+
+# Built-in chi-square. It requires matrix format.
+chi_mod <- chisq.test(mood_data)
+
+chi_mod
+
+# convert to long
+mood_data_long <- as.data.frame(as.table(mood_data))
+
+# log linear model from MASS package
+log_lm_mod <- MASS::loglm(Freq ~ handedness + mood, data = mood_data_long)
+
+log_lm_mod
+
+```
+
+
+```{r, echo = FALSE}
+
+summ_log_lm <- summary(log_lm_mod)
+
+df = data.frame(
+  model = c('chi-square', 'log lm'),
+`X squared` = c(chi_mod$statistic, summ_log_lm$tests[2, 1]),
+  'p value' = c(chi_mod$p.value, summ_log_lm$tests[2, 3])
+)
+
+df
+```
+&nbsp; 
+
+&nbsp;
 # 'Non-parametric' alternatives as linear regression models
 
 ---
@@ -318,7 +365,7 @@ $log(y_i) = log(N) + log(\alpha_i) + log(\beta_j) + log(\alpha_i\beta_j)$
 
 # References
 
-- [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/?utm_source=pocket_mylist)
+- [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/)
 
 
 &nbsp; 

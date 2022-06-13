@@ -63,20 +63,6 @@ knitr::opts_chunk$set(
 
 ```
 
-```{r, eval=FALSE, echo=FALSE}
-
-# resources
-
-# details on simulations in R
-https://aosmith.rbind.io/2018/08/29/getting-started-simulating-data/
-    
-# everything is a linear model
-https://lindeloev.github.io/tests-as-linear/?utm_source=pocket_mylist    
-    
-
-```
-
-
 ```{r klippy, echo=FALSE, include=TRUE}
 
 # remotes::install_github("rlesur/klippy")
@@ -1571,11 +1557,15 @@ summary(xy_mod)
 
 ## References
 
+- [Richard McElreath's Statistical Rethinking book](https://github.com/rmcelreath/stat_rethinking_2022) 
+
 - [R's rbinom – Simulate Binomial or Bernoulli trials](https://www.programmingr.com/examples/neat-tricks/sample-r-function/r-rbinom/)
 
 - [R's rnorm – selecting values from a normal distribution](https://www.programmingr.com/examples/neat-tricks/sample-r-function/r-rnorm/)
 
 - [R's exp – Simulating Exponential Distributions](https://www.programmingr.com/examples/neat-tricks/sample-r-function/rexp/)
+
+- [Simulating data in R](https://aosmith.rbind.io/2018/08/29/getting-started-simulating-data/)
 
 &nbsp; 
 

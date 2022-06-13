@@ -418,7 +418,7 @@ div.tocify {
       <a href="linear_regression_models.html">linear regression models</a>
     </li>
     <li>
-      <a href="stats_thru_linear_models.html">stats thru linear regression</a>
+      <a href="common_stats_as_lms.html">common stats as regressions</a>
     </li>
   </ul>
 </li>
@@ -591,7 +591,7 @@ class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCod
 class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># create histogram</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(unif_var), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> unif_var)) <span class="sc">+</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>    <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-8-1.png" width="672" />
  </p>
 <p>It shows a uniform distribution ranging from 0 to 10.</p>
 <p>We can also simulate random numbers coming from a normal distribution
@@ -603,7 +603,7 @@ class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCod
 <span id="cb6-4"><a href="#cb6-4"></a><span class="co"># plot histogram</span></span>
 <span id="cb6-5"><a href="#cb6-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(norm_var), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> norm_var)) <span class="sc">+</span></span>
 <span id="cb6-6"><a href="#cb6-6"></a>    <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p> </p>
 <p>Note that random number generating functions all have the argument
 ‘n’, which sets the length of the output vector (i.e. number of random
@@ -979,7 +979,7 @@ class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCod
 <span id="cb35-4"><a href="#cb35-4"></a><span class="co"># check distribution/ plot histogram</span></span>
 <span id="cb35-5"><a href="#cb35-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(unif_pop), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> unif_pop)) <span class="sc">+</span></span>
 <span id="cb35-6"><a href="#cb35-6"></a>    <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p> </p>
 <p>We can take random samples using <code>sample()</code> like this:</p>
 <div class="sourceCode" id="cb36"><pre
@@ -1000,7 +1000,7 @@ check the distribution of the samples:</p>
 <div class="sourceCode" id="cb39"><pre
 class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># check distribution/ plot histogram</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(samples), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> samples)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-29-1.png" width="672" />
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-28-1.png" width="672" />
  </p>
 <p>… as well as the mean:</p>
 <div class="sourceCode" id="cb40"><pre
@@ -1029,14 +1029,14 @@ class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCod
 <span id="cb44-11"><a href="#cb44-11"></a><span class="co"># check distribution/ plot histogram</span></span>
 <span id="cb44-12"><a href="#cb44-12"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(bimod_pop), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bimod_pop)) <span class="sc">+</span></span>
 <span id="cb44-13"><a href="#cb44-13"></a>    <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <div class="sourceCode" id="cb45"><pre
 class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">200</span>, <span class="fu">mean</span>(<span class="fu">sample</span>(bimod_pop, <span class="dv">10</span>)))</span>
 <span id="cb45-2"><a href="#cb45-2"></a></span>
 <span id="cb45-3"><a href="#cb45-3"></a><span class="co"># check distribution/ plot histogram</span></span>
 <span id="cb45-4"><a href="#cb45-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(bimod_pop), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bimod_pop)) <span class="sc">+</span></span>
 <span id="cb45-5"><a href="#cb45-5"></a>    <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 <div class="sourceCode" id="cb46"><pre
 class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">mean</span>(samples)</span></code></pre></div>
 <pre><code>## [1] 15.23058</code></pre>
@@ -1257,7 +1257,7 @@ Residuals are the difference between what the model predicted and the
 actual value of y. This is a graphic representation of the
 residuals:</p></li>
 </ul>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-43-1.png" width="672" />
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-42-1.png" width="672" />
  </p>
 <ul>
 <li><p><strong>Coefficients</strong>: this one contains the effect sizes
@@ -1400,7 +1400,7 @@ class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCod
 <span id="cb61-4"><a href="#cb61-4"></a><span class="co"># plot</span></span>
 <span id="cb61-5"><a href="#cb61-5"></a><span class="fu">ggplot</span>(xy_data, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y)) <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb61-6"><a href="#cb61-6"></a>    <span class="fu">geom_point</span>()  <span class="co"># plot points</span></span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-50-1.png" width="672" />
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-49-1.png" width="672" />
  </p>
 <p>Which is equivalent to:</p>
 <center>
@@ -1478,7 +1478,7 @@ class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCod
 <span id="cb66-4"><a href="#cb66-4"></a><span class="co"># plot</span></span>
 <span id="cb66-5"><a href="#cb66-5"></a><span class="fu">ggplot</span>(xy_data2, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y)) <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>,</span>
 <span id="cb66-6"><a href="#cb66-6"></a>    <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">geom_point</span>()  <span class="co"># plot points</span></span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-54-1.png" width="672" />
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-53-1.png" width="672" />
  </p>
 <p>The formula is the same than the previous model:</p>
 <center>
@@ -1849,7 +1849,7 @@ b
 <div class="sourceCode" id="cb84"><pre
 class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="co"># plot</span></span>
 <span id="cb84-2"><a href="#cb84-2"></a><span class="fu">ggplot</span>(xy_data_cat, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-62-1.png" width="672" />
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-61-1.png" width="672" />
  </p>
 <p>… and get the estimates of the model:</p>
 <div class="sourceCode" id="cb85"><pre
@@ -1905,7 +1905,7 @@ baseline:</p></li>
 class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a><span class="co"># plot</span></span>
 <span id="cb88-2"><a href="#cb88-2"></a><span class="fu">ggplot</span>(xy_data_cat, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> xy_mod_cat<span class="sc">$</span>coefficients[<span class="dv">1</span>],</span>
 <span id="cb88-3"><a href="#cb88-3"></a>    <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
 <ul>
 <li>Hence the intercept is the same as the mean of y for the category
 ‘a’:</li>
@@ -2201,7 +2201,7 @@ worry too much about all the code):</p>
 class="sourceCode numberSource r numberLines lineAnchors"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1"></a><span class="co"># plot</span></span>
 <span id="cb99-2"><a href="#cb99-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> xy_data_intr, <span class="fu">aes</span>(<span class="at">x =</span> x2, <span class="at">y =</span> y, <span class="at">color =</span> x1)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb99-3"><a href="#cb99-3"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-73-1.png" width="80%" />
+<p><img src="linear_regression_models_files/figure-html/unnamed-chunk-72-1.png" width="80%" />
  </p>
 <div class="alert alert-success">
 <p> </p>
@@ -2303,6 +2303,9 @@ href="#cb76-11"><code>x1 &lt;- rbinom(n = n, size = 1, prob = 0.5)</code></a>)</
 <h2>References</h2>
 <ul>
 <li><p><a
+href="https://github.com/rmcelreath/stat_rethinking_2022">Richard
+McElreath’s Statistical Rethinking book</a></p></li>
+<li><p><a
 href="https://www.programmingr.com/examples/neat-tricks/sample-r-function/r-rbinom/">R’s
 rbinom – Simulate Binomial or Bernoulli trials</a></p></li>
 <li><p><a
@@ -2311,6 +2314,9 @@ rnorm – selecting values from a normal distribution</a></p></li>
 <li><p><a
 href="https://www.programmingr.com/examples/neat-tricks/sample-r-function/rexp/">R’s
 exp – Simulating Exponential Distributions</a></p></li>
+<li><p><a
+href="https://aosmith.rbind.io/2018/08/29/getting-started-simulating-data/">Simulating
+data in R</a></p></li>
 </ul>
 <p> </p>
 <hr />

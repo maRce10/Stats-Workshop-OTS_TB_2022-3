@@ -1,0 +1,16 @@
+name: "Stats Workshop"
+output_dir: "docs"
+navbar:
+  title: "Stats Workshop"
+  left:
+    - text: "Tutorials"
+      menu:
+      - text: "Introduction"
+        href: introduction.html
+      - text: "R basics"
+        href: r_basics.html
+    - text: "Course prep"
+      href: course_prep.html
+    - text: "Instructor"
+      href: instructor.html
+

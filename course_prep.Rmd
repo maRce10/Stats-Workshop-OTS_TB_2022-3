@@ -1,0 +1,56 @@
+&nbsp; 
+
+```{r, echo= FALSE}
+
+knitr::opts_chunk$set(eval = FALSE)
+
+```
+
+1) Install R on the computer you will use during the course (https://cran.r-project.org/). I assume that you already have it installed, but try to update it if you have a R version < 4.0.0. You can find which R version you have by running this in the R console:
+
+```{r}
+
+version$version.string
+
+```
+
+2) Install the RStudio interface (https://www.rstudio.com/products/rstudio/download/, choose the free version). Optional but advised.
+
+3) Open RStudio and select the tab "Tools" then "Global Options" (last option). Select the "Code" option, then select the box for "Soft-wrap R source files".
+
+4) Also in Rstudio: Select the "Pane Layout" option and move "Source" to the top left pane and "Console" to the top right pane. For those of you unfamiliar with RStudio, the source is your script, where you save code in a physical file (usually .R script) and the console prints the output of the code you run from the source. You can write code in the console, but it will not be saved in a physical file. This layout allocates more screen space to the most useful panes. Hit "Apply" and "Ok".
+
+5) Now in the R console in Rstudio: Run the following code to install the latest developmental versions (from github) of warbleR, Rraven, PhenotypeSpace, ohun, baRulho and dynaSpec (remove the packages first if you have them installed already).
+
+```{r}
+
+install.packages("ggplot2") 
+install.packages("lme4")
+install.packages("viridis")
+```
+
+
+&nbsp; 
+
+<div class="alert alert-warning">
+
+
+**A few tips to make sure you will take full advantage of the course**:
+
+&nbsp; 
+
+  - Set aside a physical space, hopefully as isolated as possible from external stimuli
+  - Use headphones/earphones to avoid any interference from echoes or external noises
+  - Make sure you have anything you need before the start of the class
+  - Be ready a few minutes before the start of the class
+  - Try to focus as much as possible in the course, close other programs or unnecessary internet browser tabs (i.e. facebook, twitter, etc). This will also make the computer more efficient (less likely to get slow)
+  - Comment your code
+
+</div>
+
+
+&nbsp; 
+
+Take a look at the [R basics tutorial]() ahead of the workshop (if possible!)
+
+

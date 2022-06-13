@@ -295,6 +295,16 @@ df
 
 ---
 
+# Chi-square for contengency tables
+
+
+Although the coding is a bit more elaborated it can be narrow down to log-linear two-way ANOVA model. Let's get started...
+
+For a two-way contingency table, the model of the count variable $y$ is a modeled using the marginal proportions of a contingency table. Why this makes sense, is too involved to go into here, but [see the relevant slides by Christoph Scheepers here](https://www.uni-tuebingen.de/fileadmin/Uni_Tuebingen/SFB/SFB_833/A_Bereich/A1/Christoph_Scheepers_-_Statistikworkshop.pdf) for an excellent exposition. The model is composed of a lot of counts and the regression coefficients $A_i$ and $B_i$:
+
+
+$log(y_i) = log(N) + log(\alpha_i) + log(\beta_j) + log(\alpha_i\beta_j)$
+
 # 'Non-parametric' alternatives as linear regression models
 
 ---

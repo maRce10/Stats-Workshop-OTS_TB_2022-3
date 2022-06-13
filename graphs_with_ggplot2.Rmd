@@ -78,18 +78,27 @@ klippy::klippy(position = c('top', 'right'))
 
 ```{r functions and data, eval=T, echo=F}
 
-# hylaeformis_data <- read.csv("/home/m/Dropbox/Cursos/Advanced R Cornell/Classes/8. Stats/hylaeformis_data.csv", stringsAsFactors = FALSE)
+hylaeformis_data <- read.csv("https://raw.githubusercontent.com/maRce10/Stats-Workshop-OTS_TB_2022-3/master/data/hylaeformis_data.csv", stringsAsFactors = FALSE)
 
-hylaeformis_data <- read.csv("https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/hylaeformis_data.csv", stringsAsFactors = FALSE)
 ```
+
+&nbsp; 
+
+<div class="alert alert-warning">
 
 ## ggplot2
 
   - An **R** package specifically designed to produce graphics
+
   - Unlike other packages, ggplot2 has its own grammar
+
   - The grammar is based on "Grammar of Graphics" (Wilkinson 2005)
+
   - Independent modules that can be combined in many forms
+
   - This grammar provides high flexibility
+
+</div>
 
 &nbsp; 
 
@@ -203,7 +212,7 @@ Using the "hylaeformis" data set:
 ```{r,  eval=F, echo=T}
 
 #read from website
-hylaeformis_data <- read.csv("https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/hylaeformis_data.csv", stringsAsFactors = FALSE)
+hylaeformis_data <- read.csv("https://raw.githubusercontent.com/maRce10/Stats-Workshop-OTS_TB_2022-3/master/data/hylaeformis_data.csv", stringsAsFactors = FALSE)
 
 # or  download manually and read from local file
 hylaeformis_data <- read.csv("hylaeformis_data.csv", stringsAsFactors = FALSE)

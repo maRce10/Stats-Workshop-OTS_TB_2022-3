@@ -5,8 +5,8 @@ navbar:
   left:
     - text: "Tutorials"
       menu:
-      - text: "Introduction"
-        href: introduction.html
+      - text: "stats thru linear regression"
+        href: stats_thru_linear_models.html
       - text: "R basics"
         href: r_basics.html
     - text: "Course prep"

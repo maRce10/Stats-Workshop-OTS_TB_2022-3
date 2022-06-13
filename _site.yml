@@ -5,10 +5,12 @@ navbar:
   left:
     - text: "Tutorials"
       menu:
-      - text: "stats thru linear regression"
-        href: stats_thru_linear_models.html
       - text: "R basics"
         href: r_basics.html
+      - text: "linear regression models"
+        href: linear_regression_models.html
+      - text: "stats thru linear regression"
+        href: stats_thru_linear_models.html
     - text: "Course prep"
       href: course_prep.html
     - text: "Instructor"
